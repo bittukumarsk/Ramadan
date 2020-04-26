@@ -144,10 +144,12 @@ section .image::before
 {
     section .text h2
     {
-        font-size: 110px;
+        font-size: 95px;
     }
     section .text h2 span
     {
+        left: 50%;
+        transform: translateX(-50%);
         font-size: 18px;
     }
 }
