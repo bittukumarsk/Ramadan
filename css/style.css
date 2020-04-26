@@ -1,0 +1,153 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+body
+{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section
+{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#ffeb3b, #e91e63);
+}
+section .moon
+{
+    position: absolute;
+    top: 10px;
+    width: 175px;
+    height: 175px;
+    background: transparent;
+    border-left: 15px solid #fff;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    z-index: 5;
+}
+section .text h2
+{
+    position: relative;
+    text-align: center;
+    font-size: 150px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    font-family: 'Tangerine', cursive;
+    z-index: 5;
+}
+section .text h2 span
+{
+    position: absolute;
+    font-weight: 500;
+    font-size: 25px;
+}
+section .image
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    background: url('../images/mosque.png');
+    background-repeat: repeat-x;
+    background-size: 1200px;
+    pointer-events: none;
+    animation: scrollImage 20s linear infinite;
+    z-index: 3;
+}
+@keyframes scrollImage
+{
+    0%
+    {
+        background-position: 0px;
+    }
+    100%
+    {
+        background-position: 1200px;
+    }
+}
+section .image::before
+{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    background: url('../images/mosque.png');
+    background-repeat: repeat-x;
+    background-size: 1600px;
+    pointer-events: none;
+    opacity: 0.2;
+    animation: scrollImageReverse 40s linear infinite;
+    z-index: 1;
+}
+@keyframes scrollImageReverse
+{
+    0%
+    {
+        background-position: 1600px;
+    }
+    100%
+    {
+        background-position: 0px;
+    }
+}
+.particles-js-canvas-el
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Media Query */
+@media (max-width:1150px)
+{
+    section .moon
+    {
+        width: 150px;
+        height: 150px;
+        border-left: 12px solid #fff;
+    }
+    section .text h2
+    {
+        font-size: 130px;
+    }
+    section .text h2 span
+    {
+        font-size: 20px;
+    }
+}
+@media (max-width:900px)
+{
+    section .text h2
+    {
+        font-size: 120px;
+    }
+}
+@media (max-width:500px)
+{
+    section .text h2
+    {
+        font-size: 110px;
+    }
+    section .text h2 span
+    {
+        font-size: 18px;
+    }
+}
